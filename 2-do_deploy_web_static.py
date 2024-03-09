@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""generates a .tgz file from the contens of web_static using FABRIC"""
-from fabric.api import *
-import datetime
-import os.path
-import re
+"""
+Fabric script based on the file 1-pack_web_static.py that distributes an
+archive to the web servers
+"""
 
+from fabric.api import put, run, env
+from os.path import exists
 env.hosts = ['54.236.43.162', '34.202.234.220']
 
 
